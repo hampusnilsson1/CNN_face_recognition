@@ -22,30 +22,29 @@ st.markdown("(Reload to apply changes)")
 
 class VideoProcessor:
     def __init__(self):
-    #    self.face_classifier = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
-    #    self.expression_model = load_model("models/facial_emotion_model.h5")
-    #    self.gender_model = load_model("models/gender_model.h5")
-    #    self.ethnicity_model = load_model("models/ethnicity_model.h5")
-#
-    #    self.expression_labels = ["Angry","Disgust","Fear","Happy","Neutral","Sad","Surprise"]
-    #    self.gender_labels = ["Male", "Female"]
-    #    self.ethnicity_labels = ["White", "Black", "Asian", "Indian", "Others"]
-#
-    #    self.expression_check = expression_check
-    #    self.gender_check = gender_check
-    #    self.ethnicity_check = ethnicity_check
+        self.face_classifier = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+        self.expression_model = load_model("models/facial_emotion_model.h5")
+        self.gender_model = load_model("models/gender_model.h5")
+        self.ethnicity_model = load_model("models/ethnicity_model.h5")
+
+        self.expression_labels = ["Angry","Disgust","Fear","Happy","Neutral","Sad","Surprise"]
+        self.gender_labels = ["Male", "Female"]
+        self.ethnicity_labels = ["White", "Black", "Asian", "Indian", "Others"]
+
+        self.expression_check = expression_check
+        self.gender_check = gender_check
+        self.ethnicity_check = ethnicity_check
         pass
 
     def recv(self, frame):
         try:
             img = frame.to_ndarray(format="bgr24")
-        except Exception as e:
-            print(f"Error converting frame to ndarray: {e}")
-            return frame
-        
-        try:
+            print("Got image")
+
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            print("Turned gray")
             faces = self.face_classifier.detectMultiScale(gray)
+            print("Detected face loaded")
 
             for (x, y, w, h) in faces:
                 if w > 100:
@@ -84,9 +83,9 @@ class VideoProcessor:
 
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             return av.VideoFrame.from_ndarray(img, format="rgb24")
-
+        
         except Exception as e:
-            print(f"Error processing frame: {e}")
+            print(f"Error converting frame to ndarray: {e}")
             return frame
 
     def get_expression_label_color(self, expression_label):
