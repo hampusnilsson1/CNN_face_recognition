@@ -31,4 +31,4 @@ st.write("Showing: ", expression)
 
 picture_placeholder = st.empty()
 
-view_random_image("data/train", expression, picture_placeholder,300)
+view_random_image("data/train", expression.lower(), picture_placeholder,300)
