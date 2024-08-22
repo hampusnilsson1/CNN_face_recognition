@@ -1,3 +1,6 @@
+#cd C:\Users\Hampus\Documents\CNN_face_recognition
+#streamlit run Home.py
+
 import streamlit as st
 from streamlit_webrtc import webrtc_streamer, RTCConfiguration
 
@@ -100,8 +103,18 @@ class VideoProcessor:
         }
         return colors.get(expression_label, (255, 255, 255))
 
-webrtc_streamer(key="edge", video_processor_factory=VideoProcessor,
-                rtc_configuration=RTCConfiguration(
-					{"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
-					)
-                )
+webrtc_streamer(
+    key="edge", 
+    video_processor_factory=VideoProcessor,
+    rtc_configuration={
+        "iceServers": [
+            {"urls": ["stun:stun.l.google.com:19302"]},
+            {"urls": ["stun:stun1.l.google.com:19302"]},
+            {"urls": ["stun:stun2.l.google.com:19302"]},
+            {"urls": ["stun:stun3.l.google.com:19302"]},
+            {"urls": ["stun:stun4.l.google.com:19302"]},
+            {"urls": ["stun:stun.stunprotocol.org:3478"]},
+            {"urls": ["stun:stun.services.mozilla.com"]}
+        ]
+    }
+)
