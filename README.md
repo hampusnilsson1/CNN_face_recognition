@@ -1,7 +1,24 @@
-!gender_age_ethnicity_model.ipynb model training data(gender_age.csv) not in repository, reason being too large file!
-Download dataset on https://www.kaggle.com/datasets/nipunarora8/age-gender-and-ethnicity-face-data-csv/data
+# AI 2 Course Project - Hampus Nilsson
 
-This is my AI 2 Course Project - Hampus Nilsson
-CNN 48x48 Face Models
-Ive trained one expression model on one dataset and three models(age, ethnicity, gender) on another dataset. Age model i decided not to use it in the Home.py webcam prediction.
-Application is made into a Streamlit application where the user can decide if they want to detect age and/or gender and/or expression, aswell as pages for model analysis and model prediction tests.
+## Overview
+
+This repository contains code for a project that involves training Convolutional Neural Network (CNN) models for face analysis. Specifically, the project includes:
+
+- **Expression Model**: Trained on one dataset.
+- **Age, Ethnicity, and Gender Models**: Trained on a separate dataset.
+
+## Data
+
+The training data for the models (`gender_age.csv`) is not included in the repository due to its large size. You can download the dataset from Kaggle:
+
+- [Download Dataset](https://www.kaggle.com/datasets/nipunarora8/age-gender-and-ethnicity-face-data-csv/data)
+
+## Application
+
+The project features a Streamlit application that allows users to:
+
+- Detect age, gender, and/or expression from webcam input.
+- Analyze model performance.
+- Perform prediction tests.
+
+**Note**: The age model is not used in the `Home.py` webcam prediction functionality.
