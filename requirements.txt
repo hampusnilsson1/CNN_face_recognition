@@ -1,8 +1,8 @@
-streamlit
+streamlit==1.22.0
 streamlit_webrtc
-numpy
-pandas
-tensorflow
-matplotlib
+numpy==1.24.3
+pandas==2.2.2
+tensorflow==2.11.0
+matplotlib==3.9.2
 opencv-python-headless
-Pillow
+Pillow==10.4.0
