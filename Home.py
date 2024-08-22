@@ -3,13 +3,11 @@
 
 import streamlit as st
 
-from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 import numpy as np
 import tensorflow
 import cv2
 
 from tensorflow.keras.models import load_model
-from time import sleep
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.preprocessing import image
 
