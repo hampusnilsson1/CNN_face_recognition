@@ -22,18 +22,18 @@ st.markdown("(Reload to apply changes)")
 
 class VideoProcessor:
     def __init__(self):
-        self.face_classifier = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
-        self.expression_model = load_model("models/facial_emotion_model.h5")
-        self.gender_model = load_model("models/gender_model.h5")
-        self.ethnicity_model = load_model("models/ethnicity_model.h5")
-
-        self.expression_labels = ["Angry","Disgust","Fear","Happy","Neutral","Sad","Surprise"]
-        self.gender_labels = ["Male", "Female"]
-        self.ethnicity_labels = ["White", "Black", "Asian", "Indian", "Others"]
-
-        self.expression_check = expression_check
-        self.gender_check = gender_check
-        self.ethnicity_check = ethnicity_check
+    #    self.face_classifier = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+    #    self.expression_model = load_model("models/facial_emotion_model.h5")
+    #    self.gender_model = load_model("models/gender_model.h5")
+    #    self.ethnicity_model = load_model("models/ethnicity_model.h5")
+#
+    #    self.expression_labels = ["Angry","Disgust","Fear","Happy","Neutral","Sad","Surprise"]
+    #    self.gender_labels = ["Male", "Female"]
+    #    self.ethnicity_labels = ["White", "Black", "Asian", "Indian", "Others"]
+#
+    #    self.expression_check = expression_check
+    #    self.gender_check = gender_check
+    #    self.ethnicity_check = ethnicity_check
         pass
 
     def recv(self, frame):
